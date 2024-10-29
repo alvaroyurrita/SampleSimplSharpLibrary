@@ -6,17 +6,22 @@ namespace SampleSimplSharpLibrary
 {
     public class SampleClass
     {
-        public event EventHandler? SampleEvent;
-        public event EventHandler<MyEventArgs>? SampleComplexEvent;
+        public event EventHandler SampleEvent;
+        public event EventHandler<MyEventArgs> SampleComplexEvent;
 
         public delegate void SampleDelegate();
         public delegate int IntSampleDelegate(int intParameter);
         public delegate SimplSharpString SimplSharpStringSampleDelegate(SimplSharpString simplSharpStringParameter);
-        public delegate uint uintSampleDelegate(uint sampleStructureParameter);
+        public delegate uint uintSampleDelegate(uint sampleUintParameter);
         public delegate ushort ushortSampleDelegate(ushort ushortParameter);
         public delegate short shortSampleDelegate(short shortParameter);
-        public delegate SampleStructure SampleStructureSampleDelegate(SampleStructure shortParameter);
-        public delegate SampleSubClass SampleSubClassSampleDelegate(SampleSubClass shortParameter);
+
+        public SampleDelegate SampleDelegateProperty { get; set; }
+        public IntSampleDelegate IntSampleDelegateProperty { get; set; }
+        public SimplSharpStringSampleDelegate SimplSharpStringSampleDelegateProperty { get; set; }
+        public uintSampleDelegate uintSampleDelegateProperty { get; set; }
+        public ushortSampleDelegate ushortSampleDelegateProperty { get; set; }
+        public shortSampleDelegate shortSampleDelegateProperty { get; set; }
 
         public int intSampleField = 0;
         public string stringSampleField = "";
