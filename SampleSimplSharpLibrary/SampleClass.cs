@@ -6,22 +6,24 @@ namespace SampleSimplSharpLibrary
 {
     public class SampleClass
     {
-        public event EventHandler SampleEvent;
-        public event EventHandler<MyEventArgs> SampleComplexEvent;
+        public event EventHandler? SampleEvent;
+        public event EventHandler<MyEventArgs>? SampleComplexEvent;
 
         public delegate void SampleDelegate();
         public delegate int IntSampleDelegate(int intParameter);
+        public delegate string StringSampleDelegate(string simplSharpStringParameter);
         public delegate SimplSharpString SimplSharpStringSampleDelegate(SimplSharpString simplSharpStringParameter);
         public delegate uint uintSampleDelegate(uint sampleUintParameter);
         public delegate ushort ushortSampleDelegate(ushort ushortParameter);
         public delegate short shortSampleDelegate(short shortParameter);
 
-        public SampleDelegate SampleDelegateProperty { get; set; }
-        public IntSampleDelegate IntSampleDelegateProperty { get; set; }
-        public SimplSharpStringSampleDelegate SimplSharpStringSampleDelegateProperty { get; set; }
-        public uintSampleDelegate uintSampleDelegateProperty { get; set; }
-        public ushortSampleDelegate ushortSampleDelegateProperty { get; set; }
-        public shortSampleDelegate shortSampleDelegateProperty { get; set; }
+        public SampleDelegate? SampleDelegateProperty { get; set; }
+        public IntSampleDelegate? IntSampleDelegateProperty { get; set; }
+        public StringSampleDelegate? StringDelegateProperty { get; set; }
+        public SimplSharpStringSampleDelegate? SimplSharpStringSampleDelegateProperty { get; set; }
+        public uintSampleDelegate? uintSampleDelegateProperty { get; set; }
+        public ushortSampleDelegate? ushortSampleDelegateProperty { get; set; }
+        public shortSampleDelegate? shortSampleDelegateProperty { get; set; }
 
         public int intSampleField = 0;
         public string stringSampleField = "";
@@ -42,9 +44,10 @@ namespace SampleSimplSharpLibrary
         public SampleStructure SampleSampleStructure { get; set; } = new SampleStructure();
         public SampleSubClass SampleSampleSubClass { get; set; } = new SampleSubClass();
 
-        public ClassInDifferentNamespace ClassInDifferentNamespace = new ClassInDifferentNamespace();
+        //Classes on other Name Sapces do not show on SIMPL+
+        //public ClassInDifferentNamespace ClassInDifferentNamespace = new ClassInDifferentNamespace();
 
-        public SampleClass() { CrestronConsole.PrintLine("Sample Class Constructor"); }
+        //public SampleClass() { CrestronConsole.PrintLine("Sample Class Constructor"); }
 
         public void SampleVoidMethod()
         {
