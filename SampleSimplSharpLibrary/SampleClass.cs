@@ -155,6 +155,7 @@ namespace SampleSimplSharpLibrary
         public uint SampleStructureUint;
         public short SampleStructureShort;
         public ushort SampleStructureUshort;
+        public int SambleSubFunction(int myVar1, int MyVar2) => 0;
     }
 
     public class MyEventArgs : EventArgs
